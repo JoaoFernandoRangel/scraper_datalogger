@@ -23,6 +23,7 @@ def extrair_tabela_para_json(html):
         if len(colunas) != 6:
             continue  
         item = {
+            "tag":colunas[0].text.strip(),
             "nome": colunas[1].text.strip(),
             "valor": float(colunas[2].text.strip()),
             "unidade": colunas[3].text.strip(),
