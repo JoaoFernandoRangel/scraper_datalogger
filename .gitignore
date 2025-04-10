@@ -1,2 +1,7 @@
-/json_logs/
-/paginas/
+# Ignora tudo dentro das pastas
+json_logs/*
+paginas/*
+
+# Mas permite as próprias pastas (mantém no repositório)
+!json_logs/.gitkeep
+!paginas/.gitkeep
