@@ -44,7 +44,7 @@ try:
         response.raise_for_status()
         with open(html_filename, "w", encoding="utf-8") as file:
             file.write(response.text)
-        print(f"✅ HTML salvo: {html_filename}")
+        print(f"✅ PHP salvo: {html_filename}")
 
         # Extrai JSON
         json_data = extrair_tabela_para_json(response.text)
