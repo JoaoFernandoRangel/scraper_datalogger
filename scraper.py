@@ -17,7 +17,11 @@ def extrair_tabela_para_json(html):
     linhas = soup.find_all("tr")
 
     dados = []
-
+    timestamp = datetime.now()
+    item0 = {"timeStamp": str(timestamp).strip(),
+             "epoch": time.time()}
+    
+    dados.append(item0)
     for linha in linhas:
         colunas = linha.find_all("td")
         if len(colunas) != 6:
@@ -39,12 +43,12 @@ try:
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
 
         # Salva o conteudo do get
-        html_filename = f"paginas/pagina_{timestamp}.html"
+        # html_filename = f"paginas/pagina_{timestamp}.html"
         response = requests.get(url)
         response.raise_for_status()
-        with open(html_filename, "w", encoding="utf-8") as file:
-            file.write(response.text)
-        print(f"PHP salvo: {html_filename}")
+        # with open(html_filename, "w", encoding="utf-8") as file:
+        #     file.write(response.text)
+        # print(f"PHP salvo: {html_filename}")
 
         # Extrai JSON
         json_data = extrair_tabela_para_json(response.text)
