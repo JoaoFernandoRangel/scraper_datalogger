@@ -1,7 +1,9 @@
 # Ignora tudo dentro das pastas
 json_logs/*
 paginas/*
+csv/*
 
 # Mas permite as próprias pastas (mantém no repositório)
 !json_logs/.gitkeep
 !paginas/.gitkeep
+!csv/.gitkeep
